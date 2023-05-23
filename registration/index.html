@@ -11,6 +11,15 @@
     <meta name="KeyWords" content="Conference">
     <title>Registration | Conference Template</title>
 </head>
+    
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('We are processing your registration. You will recieve an email confirmation when you are succesfully registered.');
+  });
+</script>
 
 <body>
 
@@ -52,9 +61,9 @@
         Please select your registration type:
     </p>
 
-    <form action="payment" method="post">
-        <input type="radio" name="registration_type" value="student" checked> Student ($640)
-        <input type="radio" name="registration_type" value="regular"> Regular ($1000)
+    <form name-"gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1FYYHj6ms2k4NMUosmM1bhrlU76T3fZ8YTvY4Egsh09Q/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+        <input type="radio" name="entry.364344250" id="entry.364344250" value="Student+($640)" checked> Student ($640)
+        <input type="radio" name="entry.364344250" id ="entry.364344250" value="Regular+($1000)"> Regular ($1000)
 
         <br>
 
@@ -62,8 +71,8 @@
             Please enter your name and email address:
         </p>
 
-        <input type="text" name="name" placeholder="Name">
-        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="entry.304090705" id="entry.304090705" placeholder="Name">
+        <input type="email" name="entry.613389830" id="entry.613389830" placeholder="Email">
 
         <br>
 
@@ -71,12 +80,12 @@
             Please enter your billing information:
         </p>
 
-        <input type="text" name="billing_name" placeholder="Billing Name">
-        <input type="text" name="billing_address" placeholder="Billing Address">
-        <input type="text" name="billing_city" placeholder="City">
-        <input type="text" name="billing_state" placeholder="State">
-        <input type="text" name="billing_zip" placeholder="Zip Code">
-        <input type="text" name="billing_country" placeholder="Country">
+        <input type="text" name="entry.1057246019" id="entry.1057246019" placeholder="Billing Name">
+        <input type="text" name="entry.1956063368" id="entry.1956063368" placeholder="Billing Address">
+        <input type="text" name="entry.696818212" id="entry.696818212" placeholder="City">
+        <input type="text" name="entry.706330669" id="entry.706330669" placeholder="State">
+        <input type="text" name="entry.427194075" id="entry.427194075" placeholder="Zip Code">
+        <input type="text" name="entry.1609147936" id="entry.1609147936" placeholder="Country">
 
         <br>
 
@@ -84,14 +93,15 @@
             Please enter your credit card information:
         </p>
 
-        <input type="text" name="card_number" placeholder="Card Number">
-        <input type="text" name="expiration" placeholder="Expiration Date">
-        <input type="text" name="cvv" placeholder="CVV">
+        <input type="text" name="entry.90356273" id="entry.90356273" placeholder="Card Number">
+        <input type="text" name="entry.1114009391" id="entry.1114009391" placeholder="Expiration Date">
+        <input type="text" name="entry.1569681138" id="entry.1569681138" placeholder="CVV">
 
         <br>
 
         <input type="submit" value="Register">
     </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 
     <p>
         Your payment will appear as Varo Bank N.A.
@@ -99,7 +109,6 @@
 
     <footer>
         &copy; Conference Organizers
-        &nbsp;|&nbsp; Design by <a href="https://github.com/mikepierce">Mike Pierce</a>
     </footer>
 
 </body>
